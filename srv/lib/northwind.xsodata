@@ -1,0 +1,25 @@
+
+/**
+ * @fileOverview
+ * 
+ * List of all oData Services
+ *
+ * @name oDataService.xsodata
+ */
+
+service{
+	// ------------------------------------ Get Viewpoints Data ------------------------------------
+	"CUSTOMERS" as "Customers";
+	"REGIONS" as "Regions";
+}
+
+annotations { 
+	enable OData4SAP;
+}
+
+settings {
+     limits max_records = 250000;
+     metadata cache-control "no-cache"; 
+     content cache-control "no-cache";
+     support null;
+}

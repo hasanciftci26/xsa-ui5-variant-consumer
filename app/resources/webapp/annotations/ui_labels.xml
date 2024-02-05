@@ -1,0 +1,53 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <!-- OData service must be referenced here and we should give it a namespace -->
+    <edmx:Reference Uri="/northwind.xsodata/$metadata">
+        <edmx:Include Namespace="default" Alias="NorthwindEntityTypes" />
+    </edmx:Reference>
+    <!-- Common annotation vocabulary reference -->
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="">
+            <Annotations Target="NorthwindEntityTypes.CustomersType/CUSTOMER_ID">
+                <Annotation Term="Common.Label" String="Customer ID" />
+            </Annotations>
+            <Annotations Target="NorthwindEntityTypes.CustomersType/COMPANY_NAME">
+                <Annotation Term="Common.Label" String="Company Name" />
+            </Annotations>
+            <Annotations Target="NorthwindEntityTypes.CustomersType/CITY">
+                <Annotation Term="Common.Label" String="City" />
+            </Annotations>
+            <Annotations Target="NorthwindEntityTypes.CustomersType/COUNTRY">
+                <Annotation Term="Common.Label" String="Country" />
+            </Annotations>
+            <Annotations Target="NorthwindEntityTypes.CustomersType/REGION">
+                <Annotation Term="Common.Label" String="Region" />
+            </Annotations>
+            <Annotations Target="NorthwindEntityTypes.CustomersType/CONTACT_NAME">
+                <Annotation Term="Common.Label" String="Contact Name" />
+            </Annotations>
+            <Annotations Target="NorthwindEntityTypes.CustomersType/CONTACT_TITLE">
+                <Annotation Term="Common.Label" String="Contact Title" />
+            </Annotations>
+            <Annotations Target="NorthwindEntityTypes.CustomersType/PHONE">
+                <Annotation Term="Common.Label" String="Phone" />
+            </Annotations>          
+            <Annotations Target="NorthwindEntityTypes.CustomersType/ADDRESS">
+                <Annotation Term="Common.Label" String="Address" />
+            </Annotations>          
+            <Annotations Target="NorthwindEntityTypes.CustomersType/FAX">
+                <Annotation Term="Common.Label" String="Fax" />
+            </Annotations>          
+            <Annotations Target="NorthwindEntityTypes.CustomersType/POSTAL_CODE">
+                <Annotation Term="Common.Label" String="Postal Code" />
+            </Annotations>          
+            <Annotations Target="NorthwindEntityTypes.RegionsType/REGION_ID">
+                <Annotation Term="Common.Label" String="Region ID" />
+            </Annotations>          
+            <Annotations Target="NorthwindEntityTypes.RegionsType/REGION_DESCRIPTION">
+                <Annotation Term="Common.Label" String="Region" />
+            </Annotations>          
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

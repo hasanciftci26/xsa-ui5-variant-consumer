@@ -1,0 +1,156 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "com.persapi.sample.app",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "hanatemplates.basicSAPUI5ApplicationProject",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/northwind.xsodata/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"annotations": [
+						"ui_lineitems",
+						"ui_labels",
+						"ui_restrictions",
+						"ui_valuelist"
+					]
+				}
+			},
+			"ui_lineitems": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/ui_lineitems.xml",
+				"settings": {
+					"localUri": "annotations/ui_lineitems.xml"
+				}
+			},
+			"ui_labels": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/ui_labels.xml",
+				"settings": {
+					"localUri": "annotations/ui_labels.xml"
+				}
+			},
+			"ui_restrictions": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/ui_restrictions.xml",
+				"settings": {
+					"localUri": "annotations/ui_restrictions.xml"
+				}
+			},
+			"ui_valuelist": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/ui_valuelist.xml",
+				"settings": {
+					"localUri": "annotations/ui_valuelist.xml"
+				}
+			}
+		}		
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+
+	"sap.ui5": {
+		"flexEnabled": true,
+		"rootView": {
+			"viewName": "com.persapi.sample.app.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.120.4",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.f": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {},
+				"sap.ui.rta": {
+					"lazy": true
+				}				
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.persapi.sample.app.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			}			
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.persapi.sample.app.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "RouteHomepage",
+				"pattern": "",
+				"target": [
+					"TargetHomepage"
+				]
+			}],
+			"targets": {
+				"TargetHomepage": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "Homepage",
+					"viewName": "Homepage"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"welcomeFile": "webapp/index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "^/northwind.xsodata/(.*)$",
+		"csrfProtection": true,
+		"authenticationType": "none",
+		"destination": "northwind_api"
+	}, {
+		"source": "^/keyuser/(.*)$",
+		"authenticationType": "xsuaa",
+		"destination": "personalization_api"
+	}]
+}

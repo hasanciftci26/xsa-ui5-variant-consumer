@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+		"@sap/cds": "7.5.2",
+		"@sap/hdbext": "8.0.2",
+		"@sap/jobs-client": "1.8.3",
+		"@sap/xsenv": "4.2.0",
+		"@sap/async-xsjs": "2.0.0",
+		"@sap/xssec": "3.6.1",
+		"async": "3.2.5",
+		"axios": "1.6.5",
+		"body-parser": "1.20.2",
+		"express": "4.18.2",
+		"express-promise-router": "4.1.1",
+		"passport": "0.7.0",
+		"qs": "6.11.2",
+		"underscore": "1.13.6"
+  },
+  "description": "Backend module for sample app",
+  "devDependencies": {},
+  "files": [],
+  "main": "server.js",
+  "name": "srv",
+  "scripts": {
+    "start": "node --experimental-vm-modules server.js",
+    "test": "node testrun.js"
+  },
+  "engines": {
+    "node": "^18.x"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,42 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "CUSTOMERS",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "customers.csv",
+			"has_header": true,
+			"type_config": {
+				"delimiter": ";"
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"CUSTOMER_ID",
+				"COMPANY_NAME",
+				"CONTACT_NAME",
+				"CONTACT_TITLE",
+				"ADDRESS",
+				"CITY",
+				"REGION",
+				"POSTAL_CODE",
+				"COUNTRY",
+				"PHONE",
+				"FAX"
+			]
+		}
+	}, {
+		"target_table": "REGIONS",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "regions.csv",
+			"has_header": true
+		},
+		"import_settings": {
+			"import_columns": [
+				"REGION_ID",
+				"REGION_DESCRIPTION"
+			]
+		}
+	}]
+}

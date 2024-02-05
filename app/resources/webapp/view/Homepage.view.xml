@@ -1,0 +1,10 @@
+<mvc:View controllerName="com.persapi.sample.app.controller.Homepage" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable">
+	<Page id="page" title="{i18n>title}">
+		<content>
+			<smartFilterBar:SmartFilterBar id="sfbCustomers" entitySet="Customers" persistencyKey="sfbVariantCustomersPerKey" enableBasicSearch="true"/>
+			<smartTable:SmartTable id="stCustomers" entitySet="Customers" smartFilterId="sfbCustomers" enableExport="true" useVariantManagement="true"
+				useTablePersonalisation="true" header="Customers" showRowCount="true" persistencyKey="stVariantCustomersPerKey" enableAutoBinding="true"/>
+		</content>
+	</Page>
+</mvc:View>

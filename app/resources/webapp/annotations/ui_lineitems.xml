@@ -1,0 +1,54 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <!-- OData service must be referenced here and we should give it a namespace -->
+    <edmx:Reference Uri="/northwind.xsodata/$metadata">
+        <edmx:Include Namespace="default" Alias="NorthwindEntityTypes" />
+    </edmx:Reference>
+    <!-- We can add desired vocabularies as references and give them an alias to be used in this XML document -->
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="">
+            <Annotations Target="NorthwindEntityTypes.CustomersType">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>CUSTOMER_ID</PropertyPath>
+                        <PropertyPath>COUNTRY</PropertyPath>
+                        <PropertyPath>CITY</PropertyPath>
+                        <PropertyPath>REGION</PropertyPath>
+                        <PropertyPath>COMPANY_NAME</PropertyPath>
+                        <PropertyPath>CONTACT_NAME</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CUSTOMER_ID" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COMPANY_NAME" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CITY" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="COUNTRY" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="REGION" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CONTACT_NAME" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CONTACT_TITLE" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PHONE" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

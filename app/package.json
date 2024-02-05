@@ -1,0 +1,12 @@
+{
+	"name": "com.persapi.sample-approuter",
+	"engines": {
+		"node": "^18.x"
+	},
+	"dependencies": {
+		"@sap/approuter": "16.0.2"
+	},
+	"scripts": {
+		"start": "node node_modules/@sap/approuter/approuter.js"
+	}
+}

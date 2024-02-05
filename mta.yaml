@@ -1,0 +1,53 @@
+ID: personalization_api_consumer
+_schema-version: '2.1'
+description: Sample app for consuming Personalization API used in SAPUI5 Variant Management
+version: 0.0.1
+
+modules:
+ - name: personalization_api_consumer_db_deployer
+   type: hdb
+   path: db
+   requires:
+    - name: personalization_api_consumer_db
+
+ - name: personalization_api_consumer_srv
+   type: nodejs
+   path: srv
+   provides:
+    - name: srv_api
+      properties:
+         url: ${default-url}
+   requires:
+   - name: personalization_api_consumer_db      
+   - name: personalization_api_consumer_auth            
+
+ - name: personalization_api_consumer
+   type: html5
+   path: app
+   requires:
+     - name: personalization_api_consumer_auth
+     - name: personalization_api_destination
+       group: destinations
+       properties:
+         name: personalization_api
+         url: '~{url}'
+         forwardAuthToken: true
+     - name: srv_api
+       group: destinations
+       properties:
+         name: northwind_api
+         url: '~{url}'
+         forwardAuthToken: true
+
+resources:
+ - name: personalization_api_consumer_db
+   type: com.sap.xs.hdi-container
+   parameters:
+     service: hana
+     service-plan: hdi-shared
+ - name: personalization_api_consumer_auth
+   type: org.cloudfoundry.existing-service   
+ - name: personalization_api_destination
+   type: ''
+   properties:
+     url: #URL of the deployed personalization-api backend service should be added here   

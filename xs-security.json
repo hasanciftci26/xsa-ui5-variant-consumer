@@ -1,0 +1,15 @@
+{
+    "xsappname": "personalization-api-consumer",
+    "tenant-mode": "dedicated",
+    "scopes": [],
+    "attributes": [],
+    "role-templates": [],
+    "authorities": [
+        "$ACCEPT_GRANTED_AUTHORITIES"
+    ],
+    "foreign-scope-references": [
+        "personalization-api.Admin",
+        "personalization-api.PublicViewManager",
+        "personalization-api.RegularUser"
+    ]
+}
